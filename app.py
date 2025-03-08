@@ -61,6 +61,12 @@ def main(HDR_, HIST_):
 
             st.image(CLAHE_image, caption="CLAHE Image", use_container_width=True)
             st.download_button("Download CLAHE Image", Image.fromarray(CLAHE_image).tobytes(), "CLAHE_image.png", "image/png")
+        
+        elif HDR_ and not HIST_:
+            hdr_image = create_hdr_mertens(images)
+            st.image(hdr_image, caption="HDR Image", use_container_width=True)
+            st.download_button("Download HDR Image", Image.fromarray(hdr_image).tobytes(), "hdr_image.png", "image/png")
+
 
         elif not HDR_ and HIST_:
             colors = ('r', 'g', 'b')
