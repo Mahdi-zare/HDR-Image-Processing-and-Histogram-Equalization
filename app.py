@@ -30,8 +30,11 @@ def main(HDR_, HIST_):
     st.pyplot(fig)
 
     st.markdown("### About Techniques")
-    st.write("- **HDR Mertens Algorithm:** Enhances details in bright and dark regions.\n"
-             "- **Histogram Equalization (CLAHE):** Improves image contrast using adaptive histogram equalization.")
+    st.write("""
+    * ##### The `HDR Mertens` algorithm is an exposure fusion technique that merges multiple images with different exposures into a single high dynamic range (HDR) image, enhancing details in both bright and dark regions without requiring radiometric calibration.
+    * ##### `Histogram Equalization` is a technique used in image processing to improve the contrast of an image. It works by redistributing the pixel intensity values so that they span the entire available range (e.g., 0 to 255 for 8-bit images). This enhances details in areas with poor contrast by making the histogram more uniform.
+    * ##### Trained and Developed by [Mahdi Zare](https://www.linkedin.com/in/mahdizare22/)
+    """)
 
     uploaded_files = st.file_uploader("Choose images...", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
 
